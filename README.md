@@ -8,7 +8,7 @@
 
 ## Method of Project Completion
 - Description of the communication protocol
-  - 
+  - The group communicates primarily through slack, google sheets, and zoom meetings at least twice week. 
 - Which tools are the best fit for your project? 
 - What will be used for each section? For example, data cleaning and data storage will be completed using two different tools. 
   -> Technologies used for...
