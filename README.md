@@ -10,10 +10,11 @@
 - Description of the communication protocols
 - Which tools are the best fit for your project? 
 - What will be used for each section? For example, data cleaning and data storage will be completed using two different tools. 
--- Technologies used for...
+  -> Technologies used for...
   - Data Cleaning and Analysis
   - Database Storage
   - Machine Learning
+  - Dashboard
 - How will the dashboard be built? 
 
 ## Maching Learning Model Outline
