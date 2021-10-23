@@ -7,14 +7,15 @@
 - Questions they hope to answer with the data
 
 ## Method of Project Completion
-- Description of the communication protocols
+- Description of the communication protocol
+  - 
 - Which tools are the best fit for your project? 
 - What will be used for each section? For example, data cleaning and data storage will be completed using two different tools. 
   -> Technologies used for...
-  - Data Cleaning and Analysis
+  - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
   - Database Storage
   - Machine Learning
-  - Dashboard
+  - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
 
 ## Machine Learning Model Outline
