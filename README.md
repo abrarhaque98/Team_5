@@ -19,7 +19,7 @@
 - How will the dashboard be built? 
 
 ## Machine Learning Model Outline
-- Which model did you choose and why? Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
+- Which model did you choose and why? For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear regression. Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
 - How are you training your model?
 - What is the model's accuracy? After constructing and training the model, we will set a goal of 75% accuracy to measure to model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.
 - This model will bucket periods of strong, medium, and weak GDP and it will also bucket periods of high, medium, and low inflation. 
