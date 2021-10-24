@@ -11,7 +11,7 @@
   - The group communicates primarily through slack, google sheets, and zoom meetings at least twice week. 
 - Tools being used for each section of the project  
   - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
-  - Database Storage
+  - Database Storage: Data will be stored using an Amazon RDS 
   - Machine Learning
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
