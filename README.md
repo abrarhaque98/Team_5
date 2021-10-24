@@ -9,11 +9,9 @@
 ## Method of Project Completion
 - Description of the communication protocol
   - The group communicates primarily through slack, google sheets, and zoom meetings at least twice week. 
-- Which tools are the best fit for your project? 
-- What will be used for each section? For example, data cleaning and data storage will be completed using two different tools. 
-  -> Technologies used for...
+- Tools being used for each section of the project  
   - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
-  - Database Storage
+  - Database Storage: Data will be stored using an Amazon RDS 
   - Machine Learning
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
@@ -21,7 +19,7 @@
 ## Machine Learning Model Outline
 - Which model did you choose and why?
 - How are you training your model?
-- What is the model's accuracy?
+- What is the model's accuracy? After constructing and training the model, we will set a goal of 75% accuracy to measure to model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.
 - This model will bucket periods of strong, medium, and weak GDP and it will also bucket periods of high, medium, and low inflation. 
 - Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price.   
 
