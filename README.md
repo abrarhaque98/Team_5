@@ -25,5 +25,13 @@
 
 ## Database Outline
 - Database structure outline/ schema
+An AWS RDS will be used to store the data used throughout the duration of this project. 
+To begin with, there are six datasets in total that we plan to work with:
+  - indexInfo (Kaggle)
+  - indexProcessed (Kaggle)
+  - Inflation (World Bank)
+  - GDP inflator (World Bank)
+  - Nominal GDP (World Bank)
+  - Population (World Bank)
 - Sample data that mimics the expected final database structure or schema
 - How will the machine learning module be connected to the provisional database?
