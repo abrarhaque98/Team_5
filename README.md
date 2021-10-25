@@ -14,7 +14,7 @@
   -> Technologies used for...
   - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
   - Database Storage
-  - Machine Learning
+  - Machine Learning - We will be using Supervised Machine Learning 
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
 
