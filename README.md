@@ -2,7 +2,7 @@
 
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchanges that we are looking at include: the New York Stock Exchange, NASDAQ, Hong Kong Stock Exchange, Shanghai Stock Exchange, Tokyo Stock Exchange, Euronext, Shenzhen Stock Exchange, Toronto Stock Exchange, National Stock Exchange of India, Frankfut Stock Exchange, Korea Exchange, SIX Swiss Exchange, Taiwan Stock Exchange, and Johannesburg Stock Exchange.  
-- We chose to analyze stock exchanges index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
+- We chose to analyze stock exchange index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
 - Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - World Bank, GDP Inflator - World Bank, Nominal GDP - World Bank, Population - World Bank.
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
@@ -10,7 +10,7 @@
 - Communication protocols:
   - The group communicates primarily through slack, google sheets, and zoom meetings at least twice week. 
 - Tools being used for each section of the project:  
-  - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
+  - Data Cleaning and Analysis: We will use python's built in pandas library to clean and analyze our data.
   - Database Storage: Data will be stored using an Amazon RDS 
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
@@ -38,3 +38,4 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 <img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
 - How will the machine learning module be connected to the provisional database?
+  - The database will be imported to the jupyter notebook which has the machine learning model
