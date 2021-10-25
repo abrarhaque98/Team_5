@@ -3,7 +3,7 @@
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchanges that we are looking at include: the New York Stock Exchange, NASDAQ, Hong Kong Stock Exchange, Shanghai Stock Exchange, Tokyo Stock Exchange, Euronext, Shenzhen Stock Exchange, Toronto Stock Exchange, National Stock Exchange of India, Frankfut Stock Exchange, Korea Exchange, SIX Swiss Exchange, Taiwan Stock Exchange, and Johannesburg Stock Exchange.  
 - Reason why they selected their topic
-- Our data was sourced from Kaggle and World Bank
+- Our data was sourced from Kaggle and World Bank. indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - World Bank, GDP Inflator - World Bank, Nominal GDP - World Bank, Population - World Bank.
 
 - Questions they hope to answer with the data
 
