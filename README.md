@@ -45,3 +45,6 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
  Final Dataset:
  
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
+
+
+-We will upload the final dataset to the Cloud database(AWS), then we will upload it to a Jupyter notebook which has the machine learning model
