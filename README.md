@@ -15,7 +15,7 @@
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
-  - As mentioned previously we plan on building and visualizing the dashboard through Tableau..
+   - As mentioned previously we plan on building and visualizing the dashboard through Tableau.
 
 ## Machine Learning Model Outline
 - Which model did you choose and why? For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear regression. Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
@@ -37,7 +37,10 @@ An AWS RDS will be used to store the data used throughout the duration of this p
     - Nominal GDP (World Bank)
     - Population (World Bank)
     
-GDP inflator, Nominal GPD, and Population are primarily going to be used for calculating real GDP for the stock indexes in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the world bank datasets to a table that can provide information on the different factors that affect the stock prices. The merge between the Kaggle data and the World Bank data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. 
+GDP inflator, Nominal GPD, and Population are primarily going to be used for calculating real GDP for the stock indexes in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the world bank datasets to a table that can provide information on the different factors that affect the stock prices. The merge between the Kaggle data and the World Bank data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
+
+<img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
+
 
 - Sample data that mimics the expected final database structure or schema
 - How will the machine learning module be connected to the provisional database?
