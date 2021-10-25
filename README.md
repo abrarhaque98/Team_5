@@ -15,6 +15,7 @@
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
+  - As mentioned previously we plan on building and visualizing the dashboard through Tableau
 
 ## Machine Learning Model Outline
 - Which model did you choose and why? For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear regression. Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
