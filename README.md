@@ -15,6 +15,7 @@
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
+
   - As mentioned previously we plan on building and visualizing the dashboard through Tableau.
 
 ## Machine Learning Model Outline
