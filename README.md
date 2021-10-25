@@ -2,21 +2,18 @@
 
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchanges that we are looking at include: the New York Stock Exchange, NASDAQ, Hong Kong Stock Exchange, Shanghai Stock Exchange, Tokyo Stock Exchange, Euronext, Shenzhen Stock Exchange, Toronto Stock Exchange, National Stock Exchange of India, Frankfut Stock Exchange, Korea Exchange, SIX Swiss Exchange, Taiwan Stock Exchange, and Johannesburg Stock Exchange.  
-- Reason why they selected their topic
-- Our data was sourced from Kaggle and World Bank. indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - World Bank, GDP Inflator - World Bank, Nominal GDP - World Bank, Population - World Bank.
-
-- Questions they hope to answer with the data
+- We chose to analyze stock exchanges index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
+- Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - World Bank, GDP Inflator - World Bank, Nominal GDP - World Bank, Population - World Bank.
+- From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 ## Method of Project Completion
-- Description of the communication protocol
+- Communication protocols:
   - The group communicates primarily through slack, google sheets, and zoom meetings at least twice week. 
-- Tools being used for each section of the project  
+- Tools being used for each section of the project:  
   - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
   - Database Storage: Data will be stored using an Amazon RDS 
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
-- How will the dashboard be built? 
-   - As mentioned previously we plan on building and visualizing the dashboard through Tableau.
 
 ## Machine Learning Model Outline
 - Which model did you choose and why? For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear regression. Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
@@ -27,8 +24,6 @@
 
 
 ## Database Outline
-- Database structure outline/ schema
-
 An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are six datasets in total that we plan to work with:
 
     - indexInfo (Kaggle)
@@ -42,6 +37,4 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 
 <img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
-
-- Sample data that mimics the expected final database structure or schema
 - How will the machine learning module be connected to the provisional database?
