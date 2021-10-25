@@ -38,7 +38,9 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 <img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
 
-- We will combine the six datasets mentioned above in a final dataset so we can apply the machine learning prediction to it 
+
+- We will combine the six datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
+
 
  
  Final Dataset:
