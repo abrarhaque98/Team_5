@@ -38,4 +38,4 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 <img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
 - How will the machine learning module be connected to the provisional database?
- 
+  - The database will be imported to the jupyter notebook which has the machine learning model
