@@ -12,16 +12,18 @@
 - Tools being used for each section of the project  
   - Data Cleaning and Analysis: We will use pythons built in pandas library to clean and analyze our data.
   - Database Storage: Data will be stored using an Amazon RDS 
-  - Machine Learning
+  - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 - How will the dashboard be built? 
+   - As mentioned previously we plan on building and visualizing the dashboard through Tableau.
 
 ## Machine Learning Model Outline
-- Which model did you choose and why?
-- How are you training your model?
+- Which model did you choose and why? For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear regression. Our Stock Index Price data, GDP data, and Inflation data are all chronological, and would work well to be analyzed through regression.
+- How are you training your model? After joining our datasets into one dataset, we will split into train and test datasets using the ```train_test_split``` from ```sklearn.model_selection```. We will then instantiate linear and logistic regression models from ```sklearn```, and train the data through them.
 - What is the model's accuracy? After constructing and training the model, we will set a goal of 75% accuracy to measure to model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.
-- This model will bucket periods of strong, medium, and weak GDP and it will also bucket periods of high, medium, and low inflation. 
-- Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price.   
+- What are the model inputs and outputs?  Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price.   
+- How will the model work?  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  In addition, in our analysis we can bucket the input variables based on periods of strong, medium, and weak GDP and periods of high, medium, and low inflation. The buckets for the respective categories will be used to help categorize economic conditions associated with given stock index prices.
+
 
 ## Database Outline
 - Database structure outline/ schema
