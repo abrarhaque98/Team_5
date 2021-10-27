@@ -11,7 +11,7 @@
   - The group communicates primarily through Slack, Google Sheets, and Zoom meetings at least twice week. 
 - Tools being used for each section of the project:  
   - Data Cleaning and Analysis: We will use Python's built-in ```pandas``` library to clean and analyze our data. The datasets will be joined using SQL.
-  - Database Storage: Data will be stored using an Amazon RDS. 
+  - Database Storage: Data will be stored using an Amazon RDS in the cloud and connected to Postgres. 
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 
@@ -22,6 +22,18 @@
 - What is the model's accuracy? After constructing and training the model, we will set a goal of 75% accuracy to measure to model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.
 - What are the model inputs and outputs?  Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price.   
 - How will the model work?  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  In addition, in our analysis we can bucket the input variables based on periods of strong, medium, and weak GDP and periods of high, medium, and low inflation. The buckets for the respective categories will be used to help categorize economic conditions associated with given stock index prices.
+- Description of preliminary data preprocessing:
+- Description of preliminary feature engineering and preliminary feature selection, including the decision-making process:
+- Description of how data was split into training and testing sets:
+- Explanation of model choice, including limitations and benefits:
+- There needs to be a description of the model as well as any preprocessing that was involved. 
+- Additionally, capture an interpretation of how accurate, precise, or sensitive the model is.
+- If you had more time, where would you like to investigate for finer tuning? Keep this in mind as the presentation is being put together since it could be a really strong talking point.
+- How does it work? [Expand on this]
+- Why this specific model? [already addressed]
+- What is the model's accuracy? [already addressed]
+- If there are statistics involved, what stats are being included in analysis and why?
+- If no statistics are involved, what would you include if you had more time?
 
 
 ## Database Outline
@@ -50,4 +62,22 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 
 
 - We will upload the final dataset to the Cloud database(AWS), then we will upload it to a Jupyter notebook which has the machine learning model.
+
+- Database stores static data for use during the project
+- Database interfaces with the project in some format (e.g., scraping updates the database)
+- Includes at least two tables (or collections, if using MongoDB)
+- Includes at least one join using the database language (not including any joins in Pandas)
+- Includes at least one connection string (using SQLAlchemy or PyMongo)
+- If you use a SQL database, you must provide your ERD with relationships.
+- make sure the database is integrated fully and that it interfaces with the project in some form. For example, does web scraping add or update data? The same thought can be applied to the application programming interface (API) calls as well.
+- there should be at least two tables (or collections if Mongo is being used) in the database
+- there should be at least one join completed within the database
+- there will need to be at least one connection string included. For example, if you're using PyMongo, you'll need to include a connection string in Python that demonstrates the link between your code and the database.
+- 
+## Dashboard
+- Storyboard on a Google Slide(s)
+- Description of the tool(s) that will be used to create the final dashboard
+- Description of interactive element(s)
+- generating at least three images to use in the presentation and with the dashboard. 
+- it will also need to include interaction—something more sophisticated than a tooltip.
 
