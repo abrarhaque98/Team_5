@@ -67,7 +67,7 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 - Database interfaces with the project in some format (e.g., scraping updates the database)
 - Includes at least two tables (or collections, if using MongoDB)
 - Includes at least one join using the database language (not including any joins in Pandas)
-- Includes at least one connection string (using SQLAlchemy or PyMongo)
+- **Includes at least one connection string (using SQLAlchemy or PyMongo)**
 - If you use a SQL database, you must provide your ERD with relationships.
 - make sure the database is integrated fully and that it interfaces with the project in some form. For example, does web scraping add or update data? The same thought can be applied to the application programming interface (API) calls as well.
 - there should be at least two tables (or collections if Mongo is being used) in the database
