@@ -6,6 +6,7 @@
 - Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - FRED|St. Louis, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
+
 ## Method of Project Completion
 - Communication protocols:
   - The group communicates primarily through Slack, Google Sheets, and Zoom meetings at least twice week. 
@@ -15,8 +16,7 @@
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 
-## Machine Learning Model Outline
-
+## Machine Learning Model
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.
   - Benefits:  
   - Limitations:
