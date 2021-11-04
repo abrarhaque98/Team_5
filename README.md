@@ -95,17 +95,12 @@ Below is an ERD diagram of how we plan to connect the different datasets togethe
 
 - We will upload the final dataset to the Cloud database(AWS), then we will upload it to a Jupyter notebook which has the machine learning model.
 
-- Database stores static data for use during the project
 - Database interfaces with the project in some format (e.g., scraping updates the database)
-- Includes at least two tables (or collections, if using MongoDB)
-- Includes at least one join using the database language (not including any joins in Pandas)
+-To create the final dataset that we will use as an input for the machine learning part, we used a multiple left join query. The multiple join clause is designed by joining the NYA and population datasets using the month column from both of them, joining NYA and realgdp datasets using the quarter columns from both of them, and finally joining the Nya with inflation datasets using the month column form the NYA table and time column from Inflation table.
 - **Includes at least one connection string (using SQLAlchemy or PyMongo)**
-- If you use a SQL database, you must provide your ERD with relationships.
 - make sure the database is integrated fully and that it interfaces with the project in some form. For example, does web scraping add or update data? The same thought can be applied to the application programming interface (API) calls as well.
-- there should be at least two tables (or collections if Mongo is being used) in the database
-- there should be at least one join completed within the database
 - there will need to be at least one connection string included. For example, if you're using PyMongo, you'll need to include a connection string in Python that demonstrates the link between your code and the database.
-- 
+
 ## Dashboard
 - Storyboard on a Google Slide(s)
 - Description of the tool(s) that will be used to create the final dashboard
