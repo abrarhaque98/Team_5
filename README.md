@@ -59,6 +59,23 @@ We used the following three datasets to calculate the Real GDP since 1947, the d
  
 We used the Federal Reserve Bank of St. Louis to get the working population since 1965
 
+The four datasets are designed as following:
+
+-	RealGDP
+
+We used the field quarter as a primary key and it was linked with the field quarter as a foreign key in NYA table.
+
+-	Inflation
+	
+We used the field time as a primary key and it was linked with the field month as a foreign key in NYA table.
+
+-	Population
+	
+We used the field month as a primary key and it was linked with the field month as a foreign key in NYA table.
+
+-	NYA
+
+We used the field date as a primary key and the table is linked all the other table using the field month and quarter as foreign keys.
 
 Below is an ERD diagram of how we plan to connect the different datasets together in the database:    
 
@@ -67,7 +84,7 @@ Below is an ERD diagram of how we plan to connect the different datasets togethe
 
 
 
-- We will combine the six datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
+- We will combine the four datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
 
 
  
