@@ -41,15 +41,27 @@
 
 
 ## Database Outline
-An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are six datasets in total that we plan to work with:
+An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are 4 datasets in total that we plan to work with:
 
-    - indexInfo (Kaggle)
-    - indexProcessed (Kaggle)
-    - Inflation (FRED|St. Louis)
-    - Real GDP (FRED|St. Louis)
-    - Working Population (FRED|St. Louis)
-    
-GDP inflator, Nominal GPD, and Population are primarily going to be used for calculating real GDP for the stock indexes in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the world bank datasets to a table that can provide information on the different factors that affect the stock prices. The merge between the Kaggle data and the World Bank data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
+ - NYA (Kaggle)
+  
+We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
+
+- Inflation (i)
+ 
+The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
+
+- Real GDP (FRED|St. Louis)
+ 
+We used the following three datasets to calculate the Real GDP since 1947, the datasets was imported from the Federal Reserve Bank of St. Louis
+
+- Working Population (FRED|St. Louis)
+ 
+We used the Federal Reserve Bank of St. Louis to get the working population since 1965
+
+
+Below is an ERD diagram of how we plan to connect the different datasets together in the database:    
+
 
 <img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
