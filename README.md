@@ -63,7 +63,7 @@ We used the Federal Reserve Bank of St. Louis to get the working population sinc
 Below is an ERD diagram of how we plan to connect the different datasets together in the database:    
 
 
-<img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
+<img width="612" alt="ERD" src="">
 
 
 
