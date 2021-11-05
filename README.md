@@ -41,50 +41,21 @@
 
 
 ## Database Outline
-An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are 4 datasets in total that we plan to work with:
+An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are six datasets in total that we plan to work with:
 
- - NYA (Kaggle)
-  
-We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
+    - indexInfo (Kaggle)
+    - indexProcessed (Kaggle)
+    - Inflation (FRED|St. Louis)
+    - Real GDP (FRED|St. Louis)
+    - Working Population (FRED|St. Louis)
+    
+GDP inflator, Nominal GPD, and Population are primarily going to be used for calculating real GDP for the stock indexes in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the world bank datasets to a table that can provide information on the different factors that affect the stock prices. The merge between the Kaggle data and the World Bank data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
 
-- Inflation (FRED|St. Louis)
- 
-The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
-
-- Real GDP (FRED|St. Louis)
- 
-We used the following three datasets to calculate the Real GDP since 1947, the datasets was imported from the Federal Reserve Bank of St. Louis
-
-- Working Population (FRED|St. Louis)
- 
-We used the Federal Reserve Bank of St. Louis to get the working population since 1965
-
-The four datasets are designed as following:
-
--	RealGDP
-
-We used the field quarter as a primary key and it was linked with the field quarter as a foreign key in NYA table.
-
--	Inflation
-	
-We used the field time as a primary key and it was linked with the field month as a foreign key in NYA table.
-
--	Population
-	
-We used the field month as a primary key and it was linked with the field month as a foreign key in NYA table.
-
--	NYA
-
-We used the field date as a primary key and the table is linked all the other table using the field month and quarter as foreign keys.
-
-Below is an ERD diagram of how we plan to connect the different datasets together in the database:    
-
-
-<img width="612" alt="ERD" src="https://github.com/abrarhaque98/Team_5/blob/George/Images/ERD.png">
+<img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
 
 
 
-- We will combine the four datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
+- We will combine the six datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
 
 
  
@@ -93,14 +64,13 @@ Below is an ERD diagram of how we plan to connect the different datasets togethe
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
 
 
-- We will upload the final dataset to the Cloud database(AWS), then we will upload it to a Jupyter notebook which has the machine learning model.
-
-- Database interfaces with the project in some format (e.g., scraping updates the database)
--To create the final dataset that we will use as an input for the machine learning part, we used a multiple left join query. The multiple join clause is designed by joining the NYA and population datasets using the month column from both of them, joining NYA and realgdp datasets using the quarter columns from both of them, and finally joining the Nya with inflation datasets using the month column form the NYA table and time column from Inflation table.
-- **Includes at least one connection string (using SQLAlchemy or PyMongo)**
-- make sure the database is integrated fully and that it interfaces with the project in some form. For example, does web scraping add or update data? The same thought can be applied to the application programming interface (API) calls as well.
-- there will need to be at least one connection string included. For example, if you're using PyMongo, you'll need to include a connection string in Python that demonstrates the link between your code and the database.
-
+- The initial datasets were uploaded to an AWS S3 bucket. Then using pyspark, the datasets were pulled from the S3 bucket and transferred into separate tables in the Postgres database with code similar to the following:
+```
+#write population_df to population table in RDS 
+population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties=config)
+```
+- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
+ 
 ## Dashboard
 - Storyboard on a Google Slide(s)
 - Description of the tool(s) that will be used to create the final dashboard
