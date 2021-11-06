@@ -4,7 +4,8 @@
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchange that we are looking at iis the New York Stock Exchange. We have selected real GDP per capita and inflation as the features to help predict the closing price as these two macroeconomic measures are considered to lend insight into the health of an economy and investor outlooks. 
 - We chose to analyze stock exchange index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
 - Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - FRED|St. Louis, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
-- From our analysis, we hope to gain a better understanding of how macroeconomic factors influence teh New York Stock Exchange's closing prices. 
+- From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
+
 
 ## Method of Project Completion
 - Communication protocols:
@@ -58,23 +59,16 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
 
 
-- We will upload the final dataset to the Cloud database(AWS), then we will upload it to a Jupyter notebook which has the machine learning model.
-
-- Database stores static data for use during the project
-- Database interfaces with the project in some format (e.g., scraping updates the database)
-- Includes at least two tables (or collections, if using MongoDB)
-- Includes at least one join using the database language (not including any joins in Pandas)
-- **Includes at least one connection string (using SQLAlchemy or PyMongo)**
-- If you use a SQL database, you must provide your ERD with relationships.
-- make sure the database is integrated fully and that it interfaces with the project in some form. For example, does web scraping add or update data? The same thought can be applied to the application programming interface (API) calls as well.
-- there should be at least two tables (or collections if Mongo is being used) in the database
-- there should be at least one join completed within the database
-- there will need to be at least one connection string included. For example, if you're using PyMongo, you'll need to include a connection string in Python that demonstrates the link between your code and the database.
-- 
+- The initial datasets were uploaded to an AWS S3 bucket. Then using pyspark, the datasets were pulled from the S3 bucket and transferred into separate tables in the Postgres database with code similar to the following:
+```
+#write population_df to population table in RDS 
+population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties=config)
+```
+- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
+ 
 ## Dashboard
 - Storyboard on a Google Slide(s)
 - Description of the tool(s) that will be used to create the final dashboard
 - Description of interactive element(s)
 - generating at least three images to use in the presentation and with the dashboard. 
 - it will also need to include interaction—something more sophisticated than a tooltip.
-
