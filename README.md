@@ -40,25 +40,35 @@
 - Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
 
 ## Database Outline
-An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are five datasets in total that we plan to work with:
+An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are Four datasets in total that we plan to work with:
 
-    - indexInfo (Kaggle)
-    - indexProcessed (Kaggle)
-    - Inflation (FRED|St. Louis)
-    - Real GDP (FRED|St. Louis)
-    - Working Population (FRED|St. Louis)
+-> NYA (Kaggle)
+
+We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
+
+-> Inflation (i)
+
+The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
+
+-> Real GDP (FRED|St. Louis)
+
+We used the following three datasets to calculate the Real GDP since 1947, the datasets was imported from the Federal Reserve Bank of St. Louis
+
+-> Working Population (FRED|St. Louis)
+
+We used the Federal Reserve Bank of St. Louis to get the working population since 1965
+
+- Below is an ERD diagram of how we plan to connect the different datasets together in the database:
+
     
-Inflation, Real GPD, and Working Population are primarily going to be used for calculating real GDP for the NYSE data in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the federal reserve's datasets to a table that can provide information on the different factors that affect the index prices. The merge between the Kaggle data and the Federal Reserve data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
-
 <img width="612" alt="ERD" src="https://github.com/abrarhaque98/Team_5/blob/George/Images/ERD.png">
 
 
 
-- We will combine the six datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
 
 
+- A smple of the final Dataset in the image below:
  
- Final Dataset:
  
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
 
