@@ -64,10 +64,28 @@ We used the Federal Reserve Bank of St. Louis to get the working population sinc
 <img width="612" alt="ERD" src="https://github.com/abrarhaque98/Team_5/blob/George/Images/ERD.png">
 
 
+We have created the ERD above using the RealGDP, Inflation, NYA, and Population. And the four mentioned datasets are linked and designed as follows:
 
+o	RealGDP
 
+We used the field quarter as a primary key, and it is linked with the field quarter as a foreign key in NYA table.
+
+o	Inflation
+
+We used the field time as a primary key, and it is  linked with the field month as a foreign key in NYA table.
+
+o	Population
+
+We used the field month as a primary key, and it is linked with the field month as a foreign key in NYA table.
+
+o	NYA
+
+We used the field date as a primary key, and the table is linked to all the other tables using the field month and quarter as foreign keys.
+
+- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
 
 - A smple of the final Dataset in the image below:
+ 
  
  
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
@@ -78,7 +96,7 @@ We used the Federal Reserve Bank of St. Louis to get the working population sinc
 #write population_df to population table in RDS 
 population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties=config)
 ```
-- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
+
  
 ## Dashboard
 
