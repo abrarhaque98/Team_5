@@ -89,7 +89,7 @@ We used the field date as a primary key, and the table is linked to all the othe
 
 - The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
 
-- A smple of the final Dataset in the image below:
+- A sample of the final Dataset in the image below:
  
  
  
