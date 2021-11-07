@@ -71,8 +71,5 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 - The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
  
 ## Dashboard
-- Storyboard on a Google Slide(s)
-- Description of the tool(s) that will be used to create the final dashboard
-- Description of interactive element(s)
-- generating at least three images to use in the presentation and with the dashboard. 
-- it will also need to include interaction—something more sophisticated than a tooltip.
+-To create our final Visualization we will be using Tableau. Within Tableau we will be visualizing it with a story containing several dashboards and individual images.
+- Interactive Elements will contain a drop down filte to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. Color arrangements displaying change in inflation or gdp for the year will also be displayed. 
