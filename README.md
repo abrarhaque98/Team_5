@@ -20,6 +20,7 @@
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
   - Benefits:  The benefits of using the supervised linear regression model is that we can include multiple features to determine their relationship and significance of such relationship to the closing index price.  
   - Limitations: Our data itself is a limitation where we have the potential to conclude falsely that a feature is predictive of the index clsoing price when it is indeed not. Another limitation is that we are assuming the dependent and indepent variables are linear and in reality it is hard to find a perfectly linear relationship.
+- Technology Used: We ran our machine learning model notebook through Google Colab utilizing PySpark. This allowed us to have the database interact directly with the model.
 - Preliminary Data Preprocessing: The data preprocessing organizes the data by eliminating unecessary columns from the dataset and renaming columns for greater clarity.  This stage also involves formatting the data in the Inflation and Real GDP columns so the data is in percentages and no longer in billions, respectively.  The Real GDP and Working Population columns are used to create the Real GDP per Capita column with data.  At this stage blank rows are also removed.
 
 <img width="780" alt="Screen Shot 2021-11-06 at 2 31 48 PM" src="https://user-images.githubusercontent.com/85457256/140620172-046694df-e77c-4c8b-9cea-69af58b70fec.png">
@@ -37,6 +38,10 @@
 
 <img width="538" alt="Screen Shot 2021-11-06 at 2 28 21 PM" src="https://user-images.githubusercontent.com/85457256/140620095-46ed4ec2-9ad6-4d81-9b6f-1dd7be4d9fa2.png">
 
+We also used the root mean square error measure to analyze our regression model. Root Mean Square Error is the standard deviation of the residuals (prediction errors), and is a measure of spread from the regression equation. Our model has a RMSE of 929.
+
+![image](https://user-images.githubusercontent.com/84286467/140665090-0654f857-3e39-476c-82b9-933f31942d45.png)
+
 - Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
 
 ## Database Outline
@@ -50,7 +55,7 @@ An AWS RDS will be used to store the data used throughout the duration of this p
     
 Inflation, Real GPD, and Working Population are primarily going to be used for calculating real GDP for the NYSE data in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the federal reserve's datasets to a table that can provide information on the different factors that affect the index prices. The merge between the Kaggle data and the Federal Reserve data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
 
-<img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
+<img width="612" alt="ERD" src="https://github.com/abrarhaque98/Team_5/blob/George/Images/ERD.png">
 
 
 
