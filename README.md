@@ -72,5 +72,6 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
  
 ## Dashboard
 - To create our final Visualization we will be using Tableau. Within Tableau we will be visualizing it with a story containing several dashboards and individual images.
-- Interactive Elements will contain a drop down filte to filter the graphs presented on the story pages for the historical and machine learning output graphs. Graphs presented will be NYSE index price, GDP, inflation. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
--  Color arrangements displaying change in inflation or gdp for the year will also be displayed. 
+- Initial graphs presented will be NYSE index price, GDP, inflation.
+- Interactive Elements relative to the intial graphs will contain a drop down filter to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
+- Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
