@@ -20,6 +20,7 @@
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
   - Benefits:  The benefits of using the supervised linear regression model is that we can include multiple features to determine their relationship and significance of such relationship to the closing index price.  
   - Limitations: Our data itself is a limitation where we have the potential to conclude falsely that a feature is predictive of the index clsoing price when it is indeed not. Another limitation is that we are assuming the dependent and indepent variables are linear and in reality it is hard to find a perfectly linear relationship.
+- Technology Used: We ran our machine learning model notebook through Google Colab utilizing PySpark. This allowed us to have the database interact directly with the model.
 - Preliminary Data Preprocessing: The data preprocessing organizes the data by eliminating unecessary columns from the dataset and renaming columns for greater clarity.  This stage also involves formatting the data in the Inflation and Real GDP columns so the data is in percentages and no longer in billions, respectively.  The Real GDP and Working Population columns are used to create the Real GDP per Capita column with data.  At this stage blank rows are also removed.
 
 <img width="780" alt="Screen Shot 2021-11-06 at 2 31 48 PM" src="https://user-images.githubusercontent.com/85457256/140620172-046694df-e77c-4c8b-9cea-69af58b70fec.png">
@@ -31,32 +32,66 @@
 - How the Model Works:  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  After the model is trained, we run a test dataset of the features and output through the model to determine the accuracy.  Once the training and testing is completed, we populate the coefficients to create the multiple linear regression equation and run forecasted input data through that equation to determine out predicted index closing prices.  The model output equation is as follows:  **Pred Close Price =  - 13234.04 + (2653.9 x Pred Inflation) + (0.19632 x Pred Real GDP per Capita) + (0.000018474 x Pred Working Pop)**
 - Model Training: After joining our datasets into one dataset, we will split into train and test datasets using the ```train_test_split``` from ```sklearn.model_selection```. We will then instantiate linear and logistic regression models from ```sklearn```, and train the data through them.  Data was split into training and testing sets with the following code - ```X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=1,stratify=y)```.
 - Model Accuracy: After constructing and training the model, we set a goal of 75% accuracy to measure the model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.  However, after training and running the model, we were able to achieve an accuracy score of approximately 95%.
-- Statistical Analysis:  We used to coefficent of determination to determine the model's accuracy.  
+
+- Statistical Analysis:  We looked at the R-Squared score or the coefficient of determination to assess the effectiveness of the model. The R-Squared score is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by an independent variable or variables in a regression model. In other words, it shows how close the actual values are to the values predicted by our model. In this case, we have an R-Squared score of 94.57%, implying the model closely predicts the actual results. This exceeds our previously set goal of 75%. 
+
 
 <img width="538" alt="Screen Shot 2021-11-06 at 2 28 21 PM" src="https://user-images.githubusercontent.com/85457256/140620095-46ed4ec2-9ad6-4d81-9b6f-1dd7be4d9fa2.png">
+
+We also used the root mean square error measure to analyze our regression model. Root Mean Square Error is the standard deviation of the residuals (prediction errors), and is a measure of spread from the regression equation. Our model has a RMSE of 929.
+
+![image](https://user-images.githubusercontent.com/84286467/140665090-0654f857-3e39-476c-82b9-933f31942d45.png)
 
 - Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
 
 ## Database Outline
-An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are six datasets in total that we plan to work with:
+An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are Four datasets in total that we plan to work with:
 
-    - indexInfo (Kaggle)
-    - indexProcessed (Kaggle)
-    - Inflation (FRED|St. Louis)
-    - Real GDP (FRED|St. Louis)
-    - Working Population (FRED|St. Louis)
+-> NYA (Kaggle)
+
+We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
+
+-> Inflation (i)
+
+The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
+
+-> Real GDP (FRED|St. Louis)
+
+We used the following three datasets to calculate the Real GDP since 1947, the datasets was imported from the Federal Reserve Bank of St. Louis
+
+-> Working Population (FRED|St. Louis)
+
+We used the Federal Reserve Bank of St. Louis to get the working population since 1965
+
+- Below is an ERD diagram of how we plan to connect the different datasets together in the database:
+
     
-GDP inflator, Nominal GPD, and Population are primarily going to be used for calculating real GDP for the stock indexes in the Kaggle data sets. The two Kaggle data sets will first be merged to get a full view of each of the 13 exchanges’ opening and closing prices from 1960 to 2020. Then the Kaggle data will be merged with the world bank datasets to a table that can provide information on the different factors that affect the stock prices. The merge between the Kaggle data and the World Bank data will be on the "Country Name" column in the World Bank datasets, and the "Region" column in the Kaggle data set. Below is an ERD diagram of how we plan to connect the different datasets together in the database:
-
-<img width="612" alt="ERD" src="https://user-images.githubusercontent.com/85901073/138619466-21887232-da9c-4b3b-b43d-82da6733c033.png">
+<img width="612" alt="ERD" src="https://github.com/abrarhaque98/Team_5/blob/George/Images/ERD.png">
 
 
+We have created the ERD above using the RealGDP, Inflation, NYA, and Population. And the four mentioned datasets are linked and designed as follows:
 
-- We will combine the six datasets mentioned above in a final dataset using SQL, so we can apply the machine learning prediction to final dataset after.
+o	RealGDP
 
+We used the field quarter as a primary key, and it is linked with the field quarter as a foreign key in NYA table.
 
+o	Inflation
+
+We used the field time as a primary key, and it is  linked with the field month as a foreign key in NYA table.
+
+o	Population
+
+We used the field month as a primary key, and it is linked with the field month as a foreign key in NYA table.
+
+o	NYA
+
+We used the field date as a primary key, and the table is linked to all the other tables using the field month and quarter as foreign keys.
+
+- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
+
+- A sample of the final Dataset in the image below:
  
- Final Dataset:
+ 
  
 ![](https://github.com/abrarhaque98/Team_5/blob/George/Images/Final%20Dataset.png)
 
@@ -66,11 +101,15 @@ GDP inflator, Nominal GPD, and Population are primarily going to be used for cal
 #write population_df to population table in RDS 
 population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties=config)
 ```
-- The machine learning model required all the tables to be joined together, and the NYA dataset was the starting point of joining all the data. The population, inflation, and realgdp tables were left joined to the nya table to create the final input table named complete_join. The machine learning code is able to pull the fully joined table (complete_join) from the database to use for preprocessing before feeding it to the model.
+
  
 ## Dashboard
-- Storyboard on a Google Slide(s)
-- Description of the tool(s) that will be used to create the final dashboard
-- Description of interactive element(s)
-- generating at least three images to use in the presentation and with the dashboard. 
-- it will also need to include interaction—something more sophisticated than a tooltip.
+
+- To create our final Visualization we will be using Tableau. Within Tableau we will be visualizing it with a story containing several dashboards and individual images.
+- Initial graphs presented will be NYSE index price, GDP, inflation.
+- Interactive Elements relative to the intial graphs will contain a drop down filter to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
+- Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
+
+
+## Presentation / Dashboard Storyboard Link
+https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
