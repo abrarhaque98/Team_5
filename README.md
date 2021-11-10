@@ -7,9 +7,7 @@
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 
-## Method of Project Completion
-- Communication protocols:
-  - The group communicates primarily through Slack, Google Sheets, and Zoom meetings at least twice week. 
+## Method of Project Completion 
 - Tools being used for each section of the project:  
   - Data Cleaning and Analysis: We will use Python's built-in ```pandas``` library to clean and analyze our data. The datasets will be joined using SQL.
   - Database Storage: Data will be stored using an Amazon RDS in the cloud and connected to Postgres. 
