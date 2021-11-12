@@ -17,9 +17,7 @@
   - Dashboard: The data will be visualized and presented using Tableau.
 
 ## Data Exploration Section
-To Do: Add info about our data exploration process.
-Examples: Noting data was daily, monthly, quarterly, annually. How we adjusted for that.
-Noting .describe() measures; mean, median, std dev, is it skewed? does it have missing rows?
+
 
 ## Machine Learning Model
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
