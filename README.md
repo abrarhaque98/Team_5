@@ -51,7 +51,7 @@ An AWS RDS will be used to store the data used throughout the duration of this p
 
 We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
 
--> Inflation (i)
+-> Inflation (FRED|St. Louis)
 
 The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
 
