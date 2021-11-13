@@ -7,9 +7,7 @@
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 
-## Method of Project Completion
-- Communication protocols:
-  - The group communicates primarily through Slack, Google Sheets, and Zoom meetings at least twice week. 
+## Method of Project Completion 
 - Tools being used for each section of the project:  
   - Data Cleaning and Analysis: We will use Python's built-in ```pandas``` library to clean and analyze our data. The datasets will be joined using SQL.
   - Database Storage: Data will be stored using an Amazon RDS in the cloud and connected to Postgres. 
@@ -151,8 +149,9 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 - Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
 
 
-## Presentation / Dashboard Storyboard Link
+## Presentation Link
 https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
+
 
 
 
@@ -198,4 +197,4 @@ Explanation of changes in model choice (if changes occurred between the Segment 
 Description of how they have trained the model thus far, and any additional training that will take place
 Description of current accuracy score-DONE
 
-Dashboard: The dashboard presents a data story that is logical and easy to follow for someone unfamiliar with the topic. It includes the following: Images from the initial analysis, Data (images or report) from the machine learning task, At least one interactive element
+
