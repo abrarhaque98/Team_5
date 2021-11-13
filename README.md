@@ -26,6 +26,15 @@ We imported the various data files into a Jupyter Notebook as DataFrames, and pe
 
 Since we want to analyze New York Stock Exchange data, we will filter the indexProcessed file by NYA.
 
+### indexProcessed File
+
+After importing the indexProcessed file as a DataFrame, the NYA DataFrame was created by filtering NYA.
+
+```NYA = indexProcessed[indexProcessed.Index == "NYA"]```
+
+```NYA.describe()```
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597295-de229534-454c-465a-9803-1b7242479180.png" alt= "NYA" height="200"/>
 
 
 ## Machine Learning Model
