@@ -82,7 +82,17 @@ We also used the root mean square error measure to analyze our regression model.
 
 - Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
 
-### Predicted Values
+### Predicted Closing Prices
+
+To determine the predicted closing prices for the future, we had to determine predicted values for Real GDP, Inflation, and Working Population.
+
+For Real GDP, OECD|Data has longterm predictions for GDP. [Real GDP long-term forecast](https://data.oecd.org/gdp/real-gdp-long-term-forecast.htm)
+
+For Inflation and Working Population, FRED|St. Louis provides percent changes by month that can be downloaded to csv and averaged.
+
+[Inflation (CPI)](https://fred.stlouisfed.org/series/USACPIALLMINMEI)   [Working Population](https://fred.stlouisfed.org/series/LFWA64TTUSM647S)
+
+![image](https://user-images.githubusercontent.com/84286467/141659662-74f99833-92fa-486e-a277-ec97f2d1e36b.png)
 
 ## Database Outline
 An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are Four datasets in total that we plan to work with:
