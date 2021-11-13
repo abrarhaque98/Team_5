@@ -44,6 +44,9 @@ After importing the indexProcessed file as a DataFrame, the NYA DataFrame was cr
 
 <img src= "https://user-images.githubusercontent.com/84286467/141598758-ba76b04b-fef5-40cb-aa44-d3d4c265fb8f.png" alt="GDP" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141598831-59282c7f-03c9-45ae-aabb-fbed8678d59e.png" height="250"/>
 
+### Working Population File
+<img src= "https://user-images.githubusercontent.com/84286467/141599030-f10e6dc0-85ac-45a2-a154-7c847ebe5d71.png" alt="Pop" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141599102-e46b8105-91ad-4d34-8c9d-7e234aa1136c.png" height="250"/>
+
 
 
 ## Machine Learning Model
