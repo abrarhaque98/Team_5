@@ -3,7 +3,7 @@
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchange that we are looking at is the New York Stock Exchange. 
 - We chose to analyze stock exchange index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
-- Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - FRED|St. Louis, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
+- Our data was sourced from Kaggle, OECD|Data, and FRED|St. Louis: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - OECD|Data, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 
@@ -13,6 +13,46 @@
   - Database Storage: Data will be stored using an Amazon RDS in the cloud and connected to Postgres. 
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
+
+## Data Exploration Process
+
+We imported the various data files into a Jupyter Notebook as DataFrames, and performed exploration using ```.describe()```, ```.dtypes```, and ```.isna().sum()```. These were some of our findings.
+
+### indexInfo File
+
+<img src= "https://user-images.githubusercontent.com/84286467/141596793-314ec0f5-0a8d-45e2-997a-2e9e73e52491.png" alt="indexFile" width="400"/>
+
+Since we want to analyze New York Stock Exchange data, we will filter the indexProcessed file by NYA.
+
+### indexProcessed File
+
+After importing the indexProcessed file as a DataFrame, the NYA DataFrame was created by filtering NYA.
+
+```NYA = indexProcessed[indexProcessed.Index == "NYA"]```
+
+```NYA.describe()```
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597295-de229534-454c-465a-9803-1b7242479180.png" alt= "NYA" height="200"/>
+
+### Inflation File (CPI)
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597607-6bacf2e7-5bbd-43a0-812d-76a5e0911122.png" alt="CPI"/> <img src= "https://user-images.githubusercontent.com/84286467/141597697-dfe63297-f16e-4bbe-ba82-034c730276cd.png"/> <img src= "https://user-images.githubusercontent.com/84286467/141597742-ca19c7b0-abd9-4bf3-aeec-64aac89c0883.png"/>
+
+### GDP File
+
+<img src= "https://user-images.githubusercontent.com/84286467/141598758-ba76b04b-fef5-40cb-aa44-d3d4c265fb8f.png" alt="GDP" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141598831-59282c7f-03c9-45ae-aabb-fbed8678d59e.png" height="250"/>
+
+### Working Population File
+<img src= "https://user-images.githubusercontent.com/84286467/141599030-f10e6dc0-85ac-45a2-a154-7c847ebe5d71.png" alt="Pop" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141599102-e46b8105-91ad-4d34-8c9d-7e234aa1136c.png" height="250"/>
+
+This file has data back to 1977. To maintain consistency with the indexProcessed data, we were able to find working population data back to 1965.
+
+### Main Takeaways for Data Exploration
+- We must filter the indexProcessed file by NYA for New York Stock Exchange Data.
+- The indexProcessed file has daily data. The Inflation file has Monthly Data. The GDP file has quarterly data. The Working Population file has monthly data.
+- Using the indexProcessed file's daily data as the foundation, the data from the other files must be joined according to the month or quarter to maintain consistency. This will be accomplished by the Database group.
+- Only the Inflation file has null values in the Flag Codes column. This column will be dropped during preprocessing by the Machine Learning group.
+- Units of the CPI, GDP, and Working population data must be taken into account and corrected. This will be accomplished during preprocessing by the Machine Learning group.
 
 ## Machine Learning Model
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
@@ -49,7 +89,7 @@ An AWS RDS will be used to store the data used throughout the duration of this p
 
 We imported the dataset from Kaggel and filtered using Excel to show the data of NYA exchange from 1960 to 2020.
 
--> Inflation (i)
+-> Inflation (FRED|St. Louis)
 
 The inflation data was imported from the Federal Reserve Bank of St. Louis website and it is showing the CPI(Consumer Price Index) since 1955.
 
@@ -112,5 +152,49 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 ## Presentation Link
 https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
 
-## Final Dashboard Draft 
-[Link to dashboard](https://public.tableau.com/app/profile/david.aduaka8673/viz/FinalDashDraft/Story1?publish=yes)
+
+
+
+### To do
+Continue to develop and refine the code for your analysis.
+Square:  Complete peer reviews on the code.
+Triangle: Create a draft presentation to share with your class.
+Circle: Create a dashboard to display your findings.
+X: Perform a quality assurance check on project deliverables against rubric requirements, and test the code.
+
+Finish up peer reviews and check code.
+Merge in branches that are still open, or close others.
+Make sure the repository is ready for public viewing (this means updating the README.md to reflect the work completed, adding a .gitignore file, and requirements.txt document).REFER TO THE MODULE ON HOW TO DO THIS ONE
+
+README.md should include:
+
+Description of the communication protocols has been removed 
+Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
+Link to Google Slides draft presentation -DONE
+
+
+
+Presentation Includes:  Selected topic
+Reason topic was selected
+Description of the source of data
+Questions the team hopes to answer with the data
+Description of the data exploration phase of the project
+Description of the analysis phase of the project
+Technologies, languages, tools, and algorithms used throughout the project
+Project topic and reason it was selected
+Description of your data and where it was sourced
+Questions you intend to answer with the data
+Description of the data exploration your team conducted
+Description of the analysis conducted on the data
+Recount of the different technologies, tools, languages, and algorithms used throughout the project
+
+
+ML:  Description of data preprocessing- DONE
+Description of feature engineering and the feature selection, including the decision-making process-DONE
+Description of how data was split into training and testing sets-DONE
+Explanation of model choice, including limitations and benefits-DONE
+Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+Description of how they have trained the model thus far, and any additional training that will take place
+Description of current accuracy score-DONE
+
+
