@@ -152,49 +152,8 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 ## Presentation Link
 https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
 
+## Final Dashboard Draft 
+[Link to dashboard](https://public.tableau.com/app/profile/david.aduaka8673/viz/FinalDashDraft/Story1?publish=yes)
 
-
-
-### To do
-Continue to develop and refine the code for your analysis.
-Square:  Complete peer reviews on the code.
-Triangle: Create a draft presentation to share with your class.
-Circle: Create a dashboard to display your findings.
-X: Perform a quality assurance check on project deliverables against rubric requirements, and test the code.
-
-Finish up peer reviews and check code.
-Merge in branches that are still open, or close others.
-Make sure the repository is ready for public viewing (this means updating the README.md to reflect the work completed, adding a .gitignore file, and requirements.txt document).REFER TO THE MODULE ON HOW TO DO THIS ONE
-
-README.md should include:
-
-Description of the communication protocols has been removed 
-Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
-Link to Google Slides draft presentation -DONE
-
-
-
-Presentation Includes:  Selected topic
-Reason topic was selected
-Description of the source of data
-Questions the team hopes to answer with the data
-Description of the data exploration phase of the project
-Description of the analysis phase of the project
-Technologies, languages, tools, and algorithms used throughout the project
-Project topic and reason it was selected
-Description of your data and where it was sourced
-Questions you intend to answer with the data
-Description of the data exploration your team conducted
-Description of the analysis conducted on the data
-Recount of the different technologies, tools, languages, and algorithms used throughout the project
-
-
-ML:  Description of data preprocessing- DONE
-Description of feature engineering and the feature selection, including the decision-making process-DONE
-Description of how data was split into training and testing sets-DONE
-Explanation of model choice, including limitations and benefits-DONE
-Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-Description of how they have trained the model thus far, and any additional training that will take place
-Description of current accuracy score-DONE
 
 
