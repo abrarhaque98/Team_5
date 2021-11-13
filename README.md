@@ -26,7 +26,35 @@ We imported the various data files into a Jupyter Notebook as DataFrames, and pe
 
 Since we want to analyze New York Stock Exchange data, we will filter the indexProcessed file by NYA.
 
+### indexProcessed File
 
+After importing the indexProcessed file as a DataFrame, the NYA DataFrame was created by filtering NYA.
+
+```NYA = indexProcessed[indexProcessed.Index == "NYA"]```
+
+```NYA.describe()```
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597295-de229534-454c-465a-9803-1b7242479180.png" alt= "NYA" height="200"/>
+
+### Inflation File (CPI)
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597607-6bacf2e7-5bbd-43a0-812d-76a5e0911122.png" alt="CPI"/> <img src= "https://user-images.githubusercontent.com/84286467/141597697-dfe63297-f16e-4bbe-ba82-034c730276cd.png"/> <img src= "https://user-images.githubusercontent.com/84286467/141597742-ca19c7b0-abd9-4bf3-aeec-64aac89c0883.png"/>
+
+### GDP File
+
+<img src= "https://user-images.githubusercontent.com/84286467/141598758-ba76b04b-fef5-40cb-aa44-d3d4c265fb8f.png" alt="GDP" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141598831-59282c7f-03c9-45ae-aabb-fbed8678d59e.png" height="250"/>
+
+### Working Population File
+<img src= "https://user-images.githubusercontent.com/84286467/141599030-f10e6dc0-85ac-45a2-a154-7c847ebe5d71.png" alt="Pop" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141599102-e46b8105-91ad-4d34-8c9d-7e234aa1136c.png" height="250"/>
+
+This file has data back to 1977. To maintain consistency with the indexProcessed data, we were able to find working population data back to 1965.
+
+### Main Takeaways for Data Exploration
+- We must filter the indexProcessed file by NYA for New York Stock Exchange Data.
+- The indexProcessed file has daily data. The Inflation file has Monthly Data. The GDP file has quarterly data. The Working Population file has monthly data.
+- Using the indexProcessed file's daily data as the foundation, the data from the other files must be joined according to the month or quarter to maintain consistency. This will be accomplished by the Database group.
+- Only the Inflation file has null values in the Flag Codes column. This column will be dropped during preprocessing by the Machine Learning group.
+- Units of the CPI, GDP, and Working population data must be taken into account and corrected. This will be accomplished during preprocessing by the Machine Learning group.
 
 ## Machine Learning Model
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
