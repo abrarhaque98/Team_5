@@ -38,9 +38,11 @@ After importing the indexProcessed file as a DataFrame, the NYA DataFrame was cr
 
 ### Inflation File (CPI)
 
-<img src= "https://user-images.githubusercontent.com/84286467/141597607-6bacf2e7-5bbd-43a0-812d-76a5e0911122.png" alt="CPI"/>
-<img src= "https://user-images.githubusercontent.com/84286467/141597697-dfe63297-f16e-4bbe-ba82-034c730276cd.png"/>
-<img src= "https://user-images.githubusercontent.com/84286467/141597742-ca19c7b0-abd9-4bf3-aeec-64aac89c0883.png"/>
+<img src= "https://user-images.githubusercontent.com/84286467/141597607-6bacf2e7-5bbd-43a0-812d-76a5e0911122.png" alt="CPI"/> <img src= "https://user-images.githubusercontent.com/84286467/141597697-dfe63297-f16e-4bbe-ba82-034c730276cd.png"/> <img src= "https://user-images.githubusercontent.com/84286467/141597742-ca19c7b0-abd9-4bf3-aeec-64aac89c0883.png"/>
+
+### GDP File
+
+<img src= "https://user-images.githubusercontent.com/84286467/141598758-ba76b04b-fef5-40cb-aa44-d3d4c265fb8f.png" alt="GDP" height="250"/> <img src= "https://user-images.githubusercontent.com/84286467/141598831-59282c7f-03c9-45ae-aabb-fbed8678d59e.png" height="250"/>
 
 
 
