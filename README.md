@@ -3,7 +3,7 @@
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchange that we are looking at is the New York Stock Exchange. 
 - We chose to analyze stock exchange index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
-- Our data was sourced from Kaggle and World Bank: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - FRED|St. Louis, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
+- Our data was sourced from Kaggle, OECD|Data, and FRED|St. Louis: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - OECD|Data, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 
@@ -16,7 +16,16 @@
   - Machine Learning: The Machine Learning will be performed with Python using a Supervised Learning Model. 
   - Dashboard: The data will be visualized and presented using Tableau.
 
-## Data Exploration Section
+## Data Exploration Process
+
+We imported the various data files into a Jupyter Notebook as DataFrames, and performed exploration using ```.describe()```, ```.dtypes```, and ```.isna().sum()```. These were some of our findings.
+
+### indexInfo File
+
+<img src= "https://user-images.githubusercontent.com/84286467/141596793-314ec0f5-0a8d-45e2-997a-2e9e73e52491.png" alt="indexFile" width="400"/>
+
+Since we want to analyze New York Stock Exchange data, we will filter the indexProcessed file by NYA.
+
 
 
 ## Machine Learning Model
