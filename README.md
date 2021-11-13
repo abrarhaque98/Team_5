@@ -36,6 +36,13 @@ After importing the indexProcessed file as a DataFrame, the NYA DataFrame was cr
 
 <img src= "https://user-images.githubusercontent.com/84286467/141597295-de229534-454c-465a-9803-1b7242479180.png" alt= "NYA" height="200"/>
 
+### Inflation File (CPI)
+
+<img src= "https://user-images.githubusercontent.com/84286467/141597607-6bacf2e7-5bbd-43a0-812d-76a5e0911122.png" alt="CPI"/>
+<img src= "https://user-images.githubusercontent.com/84286467/141597697-dfe63297-f16e-4bbe-ba82-034c730276cd.png"/>
+<img src= "https://user-images.githubusercontent.com/84286467/141597742-ca19c7b0-abd9-4bf3-aeec-64aac89c0883.png"/>
+
+
 
 ## Machine Learning Model
 - Model Choice: For this project, we will use a Supervised Learning Model. This is because supervised learning models are excellent tools to perform linear/logistic regression. Our Stock Index Price data, Real GDP per Capita data, and Inflation data are all chronological, and would work well to be analyzed through regression.  
