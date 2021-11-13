@@ -67,9 +67,9 @@ This file has data back to 1977. To maintain consistency with the indexProcessed
 
 - Model Inputs and Outputs:  Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price. 
 - Preliminary feature engineering/selection:  The features were selected using the code, ```X = NYSE_df.drop('NYA_Close_Price', axis=1)```, and the target variable was selected with ```y = NYSE_df['NYA_Close_Price']```.  We have selected real GDP per capita and inflation as the features to help predict the closing price as these two macroeconomic measures are considered to lend insight into the health of an economy and investor outlooks. 
-- How the Model Works:  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  After the model is trained, we run a test dataset of the features and output through the model to determine the accuracy.  Once the training and testing is completed, we populate the coefficients to create the multiple linear regression equation and run forecasted input data through that equation to determine out predicted index closing prices.  The model output equation is as follows:  **Pred Close Price =  - 13234.04 + (2653.9 x Pred Inflation) + (0.19632 x Pred Real GDP per Capita) + (0.000018474 x Pred Working Pop)**
+- How the Model Works:  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  After the model is trained, we run a test dataset of the features and output through the model to determine the accuracy.  Once the training and testing is completed, we populate the coefficients to create the multiple linear regression equation and run forecasted input data through that equation to determine out predicted index closing prices.  The model output equation is as follows:  **Pred Close Price =  - 13234.04 + (2653.9 x Pred Inflation) + (0.19632 x Pred Real GDP per Capita) + (0.000018474 x Pred Working Pop)**.
 - Model Training: After joining our datasets into one dataset, we will split into train and test datasets using the ```train_test_split``` from ```sklearn.model_selection```. We will then instantiate linear and logistic regression models from ```sklearn```, and train the data through them.  Data was split into training and testing sets with the following code - ```X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=1,stratify=y)```.
-- Model Accuracy: After constructing and training the model, we set a goal of 75% accuracy to measure the model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.  However, after training and running the model, we were able to achieve an accuracy score of approximately 95%.
+- Model Accuracy: After constructing and training the model, we set a goal of 75% accuracy to measure the model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.  However, after training and running the model, we were able to achieve an accuracy score of approximately 95%.  Given our model's success, no further training was required. 
 
 - Statistical Analysis:  We looked at the R-Squared score or the coefficient of determination to assess the effectiveness of the model. The R-Squared score is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by an independent variable or variables in a regression model. In other words, it shows how close the actual values are to the values predicted by our model. In this case, we have an R-Squared score of 94.57%, implying the model closely predicts the actual results. This exceeds our previously set goal of 75%. 
 
@@ -142,59 +142,11 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 
  
 ## Dashboard
-
 - To create our final Visualization we will be using Tableau. Within Tableau we will be visualizing it with a story containing several dashboards and individual images.
-- Initial graphs presented will be NYSE index price, GDP, inflation.
+- Initial graphs presented will be NYSE index price, GDP, inflation, and working population.
 - Interactive Elements relative to the intial graphs will contain a drop down filter to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
 - Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
 
 
 ## Presentation Link
 https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
-
-
-
-
-### To do
-Continue to develop and refine the code for your analysis.
-Square:  Complete peer reviews on the code.
-Triangle: Create a draft presentation to share with your class.
-Circle: Create a dashboard to display your findings.
-X: Perform a quality assurance check on project deliverables against rubric requirements, and test the code.
-
-Finish up peer reviews and check code.
-Merge in branches that are still open, or close others.
-Make sure the repository is ready for public viewing (this means updating the README.md to reflect the work completed, adding a .gitignore file, and requirements.txt document).REFER TO THE MODULE ON HOW TO DO THIS ONE
-
-README.md should include:
-
-Description of the communication protocols has been removed 
-Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
-Link to Google Slides draft presentation -DONE
-
-
-
-Presentation Includes:  Selected topic
-Reason topic was selected
-Description of the source of data
-Questions the team hopes to answer with the data
-Description of the data exploration phase of the project
-Description of the analysis phase of the project
-Technologies, languages, tools, and algorithms used throughout the project
-Project topic and reason it was selected
-Description of your data and where it was sourced
-Questions you intend to answer with the data
-Description of the data exploration your team conducted
-Description of the analysis conducted on the data
-Recount of the different technologies, tools, languages, and algorithms used throughout the project
-
-
-ML:  Description of data preprocessing- DONE
-Description of feature engineering and the feature selection, including the decision-making process-DONE
-Description of how data was split into training and testing sets-DONE
-Explanation of model choice, including limitations and benefits-DONE
-Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-Description of how they have trained the model thus far, and any additional training that will take place
-Description of current accuracy score-DONE
-
-
