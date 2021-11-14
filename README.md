@@ -162,7 +162,8 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 ## Presentation Link
 https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
 
-## Dashboard Link 
+## Dashboard
+[link to dashboard](https://public.tableau.com/app/profile/david.aduaka8673/viz/FinalDash_16369329031150/Story1?publish=yes)
 
 
 
