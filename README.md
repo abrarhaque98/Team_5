@@ -66,10 +66,10 @@ This file has data back to 1977. To maintain consistency with the indexProcessed
 <img width="697" alt="Screen Shot 2021-11-06 at 2 18 04 PM" src="https://user-images.githubusercontent.com/85457256/140619822-e159f38e-0437-4ca8-9b34-b3cc012982d2.png">
 
 - Model Inputs and Outputs:  Model inputs will include the real GDP per capita and inflation for the given stock exchange's country from the 1960s through today.  The output will be the stock exchange closing price. 
-- Preliminary feature engineering/selection:  The features were selected using the code, ```X = NYSE_df.drop('NYA_Close_Price', axis=1)```, and the target variable was selected with ```y = NYSE_df['NYA_Close_Price']```.  We have selected real GDP per capita and inflation as the features to help predict the closing price as these two macroeconomic measures are considered to lend insight into the health of an economy and investor outlooks. 
-- How the Model Works:  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  After the model is trained, we run a test dataset of the features and output through the model to determine the accuracy.  Once the training and testing is completed, we populate the coefficients to create the multiple linear regression equation and run forecasted input data through that equation to determine out predicted index closing prices.  The model output equation is as follows:  **Pred Close Price =  - 13234.04 + (2653.9 x Pred Inflation) + (0.19632 x Pred Real GDP per Capita) + (0.000018474 x Pred Working Pop)**
-- Model Training: After joining our datasets into one dataset, we will split into train and test datasets using the ```train_test_split``` from ```sklearn.model_selection```. We will then instantiate linear and logistic regression models from ```sklearn```, and train the data through them.  Data was split into training and testing sets with the following code - ```X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=1,stratify=y)```.
-- Model Accuracy: After constructing and training the model, we set a goal of 75% accuracy to measure the model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.  However, after training and running the model, we were able to achieve an accuracy score of approximately 95%.
+- Preliminary feature engineering/selection:  The features were selected using the code, ```X = NYSE_df.drop('NYA_Close_Price', axis=1)```, and the target variable was selected with ```y = NYSE_df['NYA_Close_Price']```.  We have selected real GDP per capita, inflation, and working population as the features to help predict the closing price as these macroeconomic measures are considered to lend insight into the health of an economy and investor outlooks. 
+- How the Model Works:  This model will learn off of the training data and will take in the inputs to determine our output variable through regression analysis.  After the model is trained, we run a test dataset of the features and output through the model to determine the accuracy.  Once the training and testing is completed, we populate the coefficients to create the multiple linear regression equation and run forecasted input data through that equation to determine out predicted index closing prices.  The model output equation is as follows:  **Pred Close Price =  - 13234.04 + (2653.9 x Pred Inflation) + (0.19632 x Pred Real GDP per Capita) + (0.000018474 x Pred Working Pop)**.
+- Model Training: After joining our datasets into one dataset, we will split into train and test datasets using the ```train_test_split``` from ```sklearn.model_selection```. We will then instantiate a linear regression model from ```sklearn```, and train the data through them.  Data was split into training and testing sets with the following code - ```X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=1,stratify=y)```.
+- Model Accuracy: After constructing and training the model, we set a goal of 75% accuracy to measure the model against. This threshold was chosen because while we want a model that has a higher accuracy than 50%, we cannot fully encompass all variables that may affect stock index prices, GDP and inflation. Unanticipated scenarios may have an effect on any or all of these targets. Thus, the 75% threshold gives us enough room for those factors.  However, after training and running the model, we were able to achieve an accuracy score of approximately 95%.  Given our model's success, no further training was required. 
 
 - Statistical Analysis:  We looked at the R-Squared score or the coefficient of determination to assess the effectiveness of the model. The R-Squared score is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by an independent variable or variables in a regression model. In other words, it shows how close the actual values are to the values predicted by our model. In this case, we have an R-Squared score of 94.57%, implying the model closely predicts the actual results. This exceeds our previously set goal of 75%. 
 
@@ -81,6 +81,18 @@ We also used the root mean square error measure to analyze our regression model.
 ![image](https://user-images.githubusercontent.com/84286467/140665090-0654f857-3e39-476c-82b9-933f31942d45.png)
 
 - Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
+
+### Predicted Closing Prices
+
+To determine the predicted closing prices for the future, we had to determine predicted values for Real GDP, Inflation, and Working Population.
+
+For Real GDP, OECD|Data has longterm predictions for GDP. [Real GDP long-term forecast](https://data.oecd.org/gdp/real-gdp-long-term-forecast.htm)
+
+For Inflation and Working Population, FRED|St. Louis provides percent changes by month that can be downloaded to csv and averaged.
+
+[Inflation (CPI)](https://fred.stlouisfed.org/series/USACPIALLMINMEI)   [Working Population](https://fred.stlouisfed.org/series/LFWA64TTUSM647S)
+
+![image](https://user-images.githubusercontent.com/84286467/141659662-74f99833-92fa-486e-a277-ec97f2d1e36b.png)
 
 ## Database Outline
 An AWS RDS will be used to store the data used throughout the duration of this project. To begin with, there are Four datasets in total that we plan to work with:
@@ -142,18 +154,10 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 
  
 ## Dashboard
-
 - To create our final Visualization we will be using Tableau. Within Tableau we will be visualizing it with a story containing several dashboards and individual images.
-- Initial graphs presented will be NYSE index price, GDP, inflation.
+- Initial graphs presented will be NYSE index price, GDP, inflation, and working population.
 - Interactive Elements relative to the intial graphs will contain a drop down filter to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
 - Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
-
-
-## Presentation Link
-https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
-
-## Final Dashboard Draft 
-[Link to dashboard](https://public.tableau.com/app/profile/david.aduaka8673/viz/FinalDashDraft/Story1?publish=yes)
 
 
 
