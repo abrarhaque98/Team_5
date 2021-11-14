@@ -160,5 +160,4 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 - Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
 
 
-## Presentation Link
-https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
+
