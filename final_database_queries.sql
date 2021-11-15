@@ -96,13 +96,5 @@ ON inflation.time = nya.month;
 
 
 
---casting observation_date column from string to date data type?
-								--not working-- 	
-SELECT * FROM realGDP;
-SELECT observation_date, CAST(observation_date as DATE) as Date FROM realGDP;
-
---update realGDP
-UPDATE realGDP
-SET observation_date = CAST(observation_date as DATE)
 
 

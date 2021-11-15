@@ -3,7 +3,7 @@
 ## Purpose 
 - This project forecasts stock exchange index prices based on real GDP per capita and inflation for a given index's country. The stock exchange that we are looking at is the New York Stock Exchange. 
 - We chose to analyze stock exchange index data because we are interested in understanding factors that influence fluctuations in the pricing.  This analysis will use historical data to predict an index's closing price based on macroeconimic factors.  It will be important to see how historical trends compare to actual current trends in a post-pandemic environment with rising inflation and economic stress globally.  
-- Our data was sourced from Kaggle, OECD|Data, and FRED|St. Louis: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - OECD|Data, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
+- Our historical and predicted data was sourced from Kaggle, OECD|Data, and FRED|St. Louis: indexInfo - Kaggle, indexProcessed - Kaggle, Inflation - OECD|Data, Real GDP - FRED|St. Louis, Working Population - FRED|St. Louis.
 - From our analysis, we hope to gain a better understanding of how macroeconomic factors influence a stock exchange index's closing prices. 
 
 
@@ -159,8 +159,11 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 - Interactive Elements relative to the intial graphs will contain a drop down filter to filter the graphs presented on the story pages for the historical and machine learning output graphs. The filter will allow the user to filter by specific years and will apply across to all the graphs on that page. This will allow the graphs to be dynamic and allow the user to easily identify changes in selected years.
 - Additional visualization relative to the initial graphs will contain, color and size arrangements displaying change in inflation or gdp for the year will also be displayed, graph presenting accuracy between model y outputs and actual outputs, etc. 
 
-## Presentation / Dashboard Storyboard Link
-https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12
+## Presentation Link
+[NYSE Predicted Closing Price Presentation](https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12)
+
+## Dashboard
+[NYSE Predicted Closing Price Dashboard](https://public.tableau.com/app/profile/david.aduaka8673/viz/FinalDash_16369329031150/Story1?publish=yes)
 
 
 
