@@ -80,7 +80,7 @@ We also used the root mean square error measure to analyze our regression model.
 
 ![image](https://user-images.githubusercontent.com/84286467/140665090-0654f857-3e39-476c-82b9-933f31942d45.png)
 
-- Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate, interest rates, and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
+- Further Tuning:  If we had more time in developing this project, we would like to include more features, such as the unemployment rate, interest rates, corporate tax rates, spending legislation, foreign trade deficits, and political tension.  This would allow us to determine if there are better features that predict index closing prices or if in combination with our existing features enhance the model's predictive power.  In addition, we would like to form a hypothesis in order to perform a t-test and F-test to ensure that the features are significant and help us predict the index closing price.
 
 ### Predicted Closing Prices
 
