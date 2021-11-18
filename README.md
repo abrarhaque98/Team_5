@@ -166,7 +166,7 @@ population_df.write.jdbc(url=jdbc_url, table='population', mode=mode, properties
 [NYSE Predicted Closing Price Presentation](https://docs.google.com/presentation/d/1Lbrf3DhYxbQHC7fQ_tmBFH4RTjc5ArEOt2baLXxXLsE/edit#slide=id.gfd5f077b96_0_12)
 
 ## Dashboard
-[NYSE Predicted Closing Price Dashboard](https://public.tableau.com/app/profile/abrar.haque/viz/FinalDash_16371099520500/HIstProjUSD)
+[NYSE Predicted Closing Price Dashboard](https://public.tableau.com/app/profile/abrar.haque/viz/FinalDash_16371099520500/Story1)
 
 
 
